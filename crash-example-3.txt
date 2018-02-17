@@ -1,0 +1,134 @@
+- Hook 1 (voltron stopped)
+[disassembly]
+libsystem_blocks.dylib`_Block_object_dispose:
+->  0x7fff7119ec86 <+77>: test   dword ptr [rbx + 0x10], 0x1000000
+    0x7fff7119ec8d <+84>: je     0x7fff7119ece8            ; <+175>
+    0x7fff7119ec8f <+86>: lea    rcx, [rbx + 0x10]
+    0x7fff7119ec93 <+90>: mov    eax, dword ptr [rcx]
+
+[/disassembly]
+[registers]
+	 rax = 0x00007fffa32822c0  libFontRegistry.dylib`__block_descriptor_tmp.319
+	 rbx = 0x0000000000000000
+	 rcx = 0x0000000111bebb38
+	 rdx = 0x000000000000fffe
+	 rdi = 0x0000000117043360
+	 rsi = 0x0000000000000008
+	 rbp = 0x00007ffeefbfda40
+	 rsp = 0x00007ffeefbfda30
+	 r8 = 0x00000001174901d0
+	 r9 = 0x00007fffa3893750  CoreFoundation`__CFRuntimeClassTable
+	 r10 = 0x000000010442d1c0
+	 r11 = 0x0000000118c61df0
+	 r12 = 0xa3a3a3a3a3a3a3a3
+	 r13 = 0x0000000111db8ad0
+	 r14 = 0x0000000117043360
+	 r15 = 0x0000000114acb000
+	 rip = 0x00007fff7119ec86  libsystem_blocks.dylib`_Block_object_dispose + 77
+	 rflags = 0x0000000000010246
+	 cs = 0x000000000000002b
+	 fs = 0x0000000000000000
+	 gs = 0x0000000000000000
+[/registers]
+
+- Hook 2 (ct)
+Process 45512 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = EXC_BAD_ACCESS (code=1, address=0x10)
+    frame #0: 0x00007fff7119ec86 libsystem_blocks.dylib`_Block_object_dispose + 77
+libsystem_blocks.dylib`_Block_object_dispose:
+->  0x7fff7119ec86 <+77>: test   dword ptr [rbx + 0x10], 0x1000000
+    0x7fff7119ec8d <+84>: je     0x7fff7119ece8            ; <+175>
+    0x7fff7119ec8f <+86>: lea    rcx, [rbx + 0x10]
+    0x7fff7119ec93 <+90>: mov    eax, dword ptr [rcx]
+Target 0: (UltraEdit) stopped.
+(lldb) c
+Process 45512 resuming
+
+- Hook 1 (voltron stopped)
+[disassembly]
+libsystem_blocks.dylib`_Block_object_dispose:
+->  0x7fff7119ec86 <+77>: test   dword ptr [rbx + 0x10], 0x1000000
+    0x7fff7119ec8d <+84>: je     0x7fff7119ece8            ; <+175>
+    0x7fff7119ec8f <+86>: lea    rcx, [rbx + 0x10]
+    0x7fff7119ec93 <+90>: mov    eax, dword ptr [rcx]
+
+[/disassembly]
+[registers]
+	 rax = 0x00007fffa32822c0  libFontRegistry.dylib`__block_descriptor_tmp.319
+	 rbx = 0x0000000000000000
+	 rcx = 0x0000000111bebb38
+	 rdx = 0x000000000000fffe
+	 rdi = 0x0000000117043360
+	 rsi = 0x0000000000000008
+	 rbp = 0x00007ffeefbfda40
+	 rsp = 0x00007ffeefbfda30
+	 r8 = 0x00000001174901d0
+	 r9 = 0x00007fffa3893750  CoreFoundation`__CFRuntimeClassTable
+	 r10 = 0x000000010442d1c0
+	 r11 = 0x0000000118c61df0
+	 r12 = 0xa3a3a3a3a3a3a3a3
+	 r13 = 0x0000000111db8ad0
+	 r14 = 0x0000000117043360
+	 r15 = 0x0000000114acb000
+	 rip = 0x00007fff7119ec86  libsystem_blocks.dylib`_Block_object_dispose + 77
+	 rflags = 0x0000000000010246
+	 cs = 0x000000000000002b
+	 fs = 0x0000000000000000
+	 gs = 0x0000000000000000
+[/registers]
+
+- Hook 2 (ct)
+Process 45512 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = EXC_BAD_ACCESS (code=1, address=0x10)
+    frame #0: 0x00007fff7119ec86 libsystem_blocks.dylib`_Block_object_dispose + 77
+libsystem_blocks.dylib`_Block_object_dispose:
+->  0x7fff7119ec86 <+77>: test   dword ptr [rbx + 0x10], 0x1000000
+    0x7fff7119ec8d <+84>: je     0x7fff7119ece8            ; <+175>
+    0x7fff7119ec8f <+86>: lea    rcx, [rbx + 0x10]
+    0x7fff7119ec93 <+90>: mov    eax, dword ptr [rcx]
+Target 0: (UltraEdit) stopped.
+(lldb) c
+Process 45512 resuming
+
+- Hook 1 (voltron stopped)
+[disassembly]
+libsystem_blocks.dylib`_Block_object_dispose:
+->  0x7fff7119ec86 <+77>: test   dword ptr [rbx + 0x10], 0x1000000
+    0x7fff7119ec8d <+84>: je     0x7fff7119ece8            ; <+175>
+    0x7fff7119ec8f <+86>: lea    rcx, [rbx + 0x10]
+    0x7fff7119ec93 <+90>: mov    eax, dword ptr [rcx]
+
+[/disassembly]
+[registers]
+	 rax = 0x00007fffa32822c0  libFontRegistry.dylib`__block_descriptor_tmp.319
+	 rbx = 0x0000000000000000
+	 rcx = 0x0000000111bebb38
+	 rdx = 0x000000000000fffe
+	 rdi = 0x0000000117043360
+	 rsi = 0x0000000000000008
+	 rbp = 0x00007ffeefbfda40
+	 rsp = 0x00007ffeefbfda30
+	 r8 = 0x00000001174901d0
+	 r9 = 0x00007fffa3893750  CoreFoundation`__CFRuntimeClassTable
+	 r10 = 0x000000010442d1c0
+	 r11 = 0x0000000118c61df0
+	 r12 = 0xa3a3a3a3a3a3a3a3
+	 r13 = 0x0000000111db8ad0
+	 r14 = 0x0000000117043360
+	 r15 = 0x0000000114acb000
+	 rip = 0x00007fff7119ec86  libsystem_blocks.dylib`_Block_object_dispose + 77
+	 rflags = 0x0000000000010246
+	 cs = 0x000000000000002b
+	 fs = 0x0000000000000000
+	 gs = 0x0000000000000000
+[/registers]
+
+- Hook 2 (ct)
+Process 45512 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = EXC_BAD_ACCESS (code=1, address=0x10)
+    frame #0: 0x00007fff7119ec86 libsystem_blocks.dylib`_Block_object_dispose + 77
+libsystem_blocks.dylib`_Block_object_dispose:
+->  0x7fff7119ec86 <+77>: test   dword ptr [rbx + 0x10], 0x1000000
+    0x7fff7119ec8d <+84>: je     0x7fff7119ece8            ; <+175>
+    0x7fff7119ec8f <+86>: lea    rcx, [rbx + 0x10]
+    0x7fff7119ec93 <+90>: mov    eax, dword ptr [rcx]
