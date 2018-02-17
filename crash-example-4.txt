@@ -1,0 +1,88 @@
+- Hook 2 (ct)
+Process 45494 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGABRT
+    frame #0: 0x00007fff7129fe3e libsystem_kernel.dylib`__pthread_kill + 10
+libsystem_kernel.dylib`__pthread_kill:
+->  0x7fff7129fe3e <+10>: jae    0x7fff7129fe48            ; <+20>
+    0x7fff7129fe40 <+12>: mov    rdi, rax
+    0x7fff7129fe43 <+15>: jmp    0x7fff712970b8            ; cerror_nocancel
+    0x7fff7129fe48 <+20>: ret    
+Target 0: (UltraEdit) stopped.
+(lldb) bt
+* thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGABRT
+  * frame #0: 0x00007fff7129fe3e libsystem_kernel.dylib`__pthread_kill + 10
+    frame #1: 0x00007fff713de150 libsystem_pthread.dylib`pthread_kill + 333
+    frame #2: 0x00007fff711fc312 libsystem_c.dylib`abort + 127
+    frame #3: 0x00007fff7130adbf libsystem_malloc.dylib`nanozone_error + 502
+    frame #4: 0x00007fff712fedac libsystem_malloc.dylib`_nano_malloc_check_clear + 410
+    frame #5: 0x00007fff712febf1 libsystem_malloc.dylib`nano_malloc + 35
+    frame #6: 0x00007fff712f8201 libsystem_malloc.dylib`malloc_zone_malloc + 103
+    frame #7: 0x00007fff712f750b libsystem_malloc.dylib`malloc + 24
+    frame #8: 0x00007fff49bc4d0f CoreGraphics`x_list_prepend + 23
+    frame #9: 0x00007fff49bc0216 CoreGraphics`CGColorTransformConvertColorComponents + 855
+    frame #10: 0x00007fff49f451ec CoreGraphics`ripc_GetColor + 2006
+    frame #11: 0x00007fff49cc475a CoreGraphics`render_glyph_list + 265
+    frame #12: 0x00007fff49cc4ad8 CoreGraphics`render_glyphs + 337
+    frame #13: 0x00007fff49cc45e2 CoreGraphics`draw_glyph_bitmaps + 1657
+    frame #14: 0x00007fff49cc355e CoreGraphics`ripc_DrawGlyphs + 1656
+    frame #15: 0x00007fff46f06bbd AppKit`__backing_store_DrawGlyphs_block_invoke + 48
+    frame #16: 0x00007fff46f03681 AppKit`backing_store_delegate + 962
+    frame #17: 0x00007fff471fe047 AppKit`backing_store_DrawGlyphs.llvm.933B347B + 1453
+    frame #18: 0x00007fff49f0a148 CoreGraphics`draw_glyphs + 1064
+    frame #19: 0x00007fff4b28d414 CoreText`DrawGlyphsAtPositions(TFont const*, unsigned short const*, CGPoint const*, unsigned long, CGContext*, CGAffineTransform, CGAffineTransform, bool) + 3655
+    frame #20: 0x00007fff4b289bc7 CoreText`DrawGlyphsWithAdvancesAndTransform(TFont const*, unsigned short const*, CGSize const*, unsigned long, CGPoint, CGContext*, CGAffineTransform, CGAffineTransform, bool) + 564
+    frame #21: 0x00007fff4b28b3bd CoreText`CTFontDrawGlyphsWithAdvancesInternal + 608
+    frame #22: 0x00007fff4b23a913 CoreText`TRun::DrawGlyphs(CGContext*, CFRange) const + 763
+    frame #23: 0x00007fff4b277af4 CoreText`TLine::DrawGlyphs(CGContext*) const + 212
+    frame #24: 0x000000010924a745 UltraEdit`wxMacCoreGraphicsContext::DoDrawText(wxString const&, double, double) + 677
+    frame #25: 0x00000001092c08a4 UltraEdit`wxGCDCImpl::DoDrawText(wxString const&, int, int, wxSize const&) + 132
+    frame #26: 0x0000000108b57475 UltraEdit`ueExtTextOut(wxDC*, int, int, wxString const&, wxRect*, int, wxColour const*) + 261
+    frame #27: 0x000000010888048d UltraEdit`ueTextCtrl::MyExtTextOut(wxString const&, PaintStruct&) + 109
+    frame #28: 0x000000010887fa73 UltraEdit`ueTextCtrl::ProcessMLRecords(unsigned char const*, int&, int, PaintStruct&, int, int) + 867
+    frame #29: 0x000000010888616d UltraEdit`ueTextCtrl::DoPaintScreen(wxDC&, int, int, wchar_t const*) + 6253
+    frame #30: 0x000000010892765e UltraEdit`ueTextCtrl::OnPaint(wxPaintEvent&) + 638
+    frame #31: 0x00000001091d7b3f UltraEdit`wxEventHashTable::HandleEvent(wxEvent&, wxEvtHandler*) + 351
+    frame #32: 0x00000001091d878d UltraEdit`wxEvtHandler::ProcessEventLocally(wxEvent&) + 93
+    frame #33: 0x00000001091d8677 UltraEdit`wxEvtHandler::ProcessEvent(wxEvent&) + 103
+    frame #34: 0x00000001091d8a4f UltraEdit`wxEvtHandler::SafelyProcessEvent(wxEvent&) + 15
+    frame #35: 0x000000010920ca61 UltraEdit`wxWindow::MacDoRedraw(long) + 801
+    frame #36: 0x0000000109292d97 UltraEdit`wxWidgetCocoaImpl::drawRect(void*, NSView*, void*) + 967
+    frame #37: 0x00000001092907b6 UltraEdit`wxOSX_drawRect(NSView*, objc_selector*, CGRect) + 86
+    frame #38: 0x00007fff47620c21 AppKit`_NSViewDrawRect + 83
+    frame #39: 0x00007fff46eb9b38 AppKit`-[NSView _drawRect:clip:] + 1819
+    frame #40: 0x00007fff46f01f62 AppKit`-[NSView _recursiveDisplayAllDirtyWithLockFocus:visRect:] + 1735
+    frame #41: 0x00007fff46f0242f AppKit`-[NSView _recursiveDisplayAllDirtyWithLockFocus:visRect:] + 2964
+    frame #42: 0x00007fff46f0242f AppKit`-[NSView _recursiveDisplayAllDirtyWithLockFocus:visRect:] + 2964
+    frame #43: 0x00007fff46f0242f AppKit`-[NSView _recursiveDisplayAllDirtyWithLockFocus:visRect:] + 2964
+    frame #44: 0x00007fff46eb7a52 AppKit`-[NSView _recursiveDisplayRectIfNeededIgnoringOpacity:isVisibleRect:rectIsVisibleRectForView:topView:] + 938
+    frame #45: 0x00007fff46eb82c1 AppKit`-[NSView _recursiveDisplayRectIfNeededIgnoringOpacity:isVisibleRect:rectIsVisibleRectForView:topView:] + 3097
+    frame #46: 0x00007fff46eb82c1 AppKit`-[NSView _recursiveDisplayRectIfNeededIgnoringOpacity:isVisibleRect:rectIsVisibleRectForView:topView:] + 3097
+    frame #47: 0x00007fff46eb71db AppKit`-[NSThemeFrame _recursiveDisplayRectIfNeededIgnoringOpacity:isVisibleRect:rectIsVisibleRectForView:topView:] + 327
+    frame #48: 0x00007fff476221d8 AppKit`-[NSView _oldDisplayRectIgnoringOpacity:isVisibleRect:rectIsVisibleRectForView:] + 2051
+    frame #49: 0x00007fff46eb6261 AppKit`-[NSView _displayRectIgnoringOpacity:isVisibleRect:rectIsVisibleRectForView:] + 253
+    frame #50: 0x00007fff46eb24b8 AppKit`-[NSView displayIfNeeded] + 1581
+    frame #51: 0x00007fff46eb1e56 AppKit`-[NSWindow displayIfNeeded] + 321
+    frame #52: 0x00007fff476522d9 AppKit`___NSWindowGetDisplayCycleObserver_block_invoke.5902 + 308
+    frame #53: 0x00007fff46eb1962 AppKit`__37+[NSDisplayCycle currentDisplayCycle]_block_invoke + 695
+    frame #54: 0x00007fff548e878f QuartzCore`CA::Transaction::run_commit_handlers(CATransactionPhase) + 49
+    frame #55: 0x00007fff548e7301 QuartzCore`CA::Transaction::commit() + 171
+    frame #56: 0x00007fff47669658 AppKit`__65+[CATransaction(NSCATransaction) NS_setFlushesWithDisplayRefresh]_block_invoke + 283
+    frame #57: 0x00007fff497b8427 CoreFoundation`__CFRUNLOOP_IS_CALLING_OUT_TO_AN_OBSERVER_CALLBACK_FUNCTION__ + 23
+    frame #58: 0x00007fff497b834f CoreFoundation`__CFRunLoopDoObservers + 511
+    frame #59: 0x00007fff4979aef8 CoreFoundation`__CFRunLoopRun + 1240
+    frame #60: 0x00007fff4979a787 CoreFoundation`CFRunLoopRunSpecific + 487
+    frame #61: 0x00007fff48aa7e26 HIToolbox`RunCurrentEventLoopInMode + 286
+    frame #62: 0x00007fff48aa7a9f HIToolbox`ReceiveNextEventCommon + 366
+    frame #63: 0x00007fff48aa7914 HIToolbox`_BlockUntilNextEventMatchingListInModeWithFilter + 64
+    frame #64: 0x00007fff46d72f5f AppKit`_DPSNextEvent + 2085
+    frame #65: 0x00007fff47508b4c AppKit`-[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 3044
+    frame #66: 0x00007fff46d67d6d AppKit`-[NSApplication run] + 764
+    frame #67: 0x00000001092774b4 UltraEdit`wxGUIEventLoop::OSXDoRun() + 116
+    frame #68: 0x00000001091bde74 UltraEdit`wxCFEventLoop::DoRun() + 52
+    frame #69: 0x0000000109119aa8 UltraEdit`wxEventLoopBase::Run() + 88
+    frame #70: 0x00000001090edd70 UltraEdit`wxAppConsoleBase::MainLoop() + 128
+    frame #71: 0x000000010923dffa UltraEdit`wxApp::OnRun() + 26
+    frame #72: 0x0000000109152e20 UltraEdit`wxEntry(int&, wchar_t**) + 64
+    frame #73: 0x0000000108c4a524 UltraEdit`main + 20
+    frame #74: 0x0000000108370134 UltraEdit`start + 52
+(lldb) 
